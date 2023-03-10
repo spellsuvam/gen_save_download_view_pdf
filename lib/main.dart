@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_generator/file_downloader.dart';
 import 'package:pdf_generator/pdf_generator.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PdfGenerator(),
+      home: const FileDownloader(),
     );
   }
 }
