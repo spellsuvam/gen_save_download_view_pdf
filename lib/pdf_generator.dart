@@ -77,14 +77,11 @@ class PdfGeneratorState extends State<PdfGenerator> {
         </span>
       </div>
       <div style="display: flex; gap: 5px; background-color: #f7fafc; margin-top:10px">
-        <span style="margin-left: 5px; margin-top: 3px">
+        <span style="margin-left: 5px; margin-top: 3px;">
           <img
-            style="
-              width: 80px;
-              border-width: 1px;
-              border-style: solid;
-              border-color: #000;
-              background-color: #fff;
+            style="       
+              width: 100px;
+              object-fit:fill;  
             "
             src="$studentPhoto"
             alt="name"
@@ -244,6 +241,6 @@ class PdfGeneratorState extends State<PdfGenerator> {
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Jon_Kirsch%27s_Signature.png/800px-Jon_Kirsch%27s_Signature.png?20100224042226",
                   );
                 },
-                child: Text('Generate Id card 1'))));
+                child: const Text('Generate Id card 1'))));
   }
 }
