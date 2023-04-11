@@ -3,6 +3,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_file_dialog/flutter_file_dialog.dart';
+import 'package:mime/mime.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:permission_handler/permission_handler.dart';
@@ -37,14 +39,16 @@ class _FileDownloaderState extends State<FileDownloader> {
     try {
       if (Platform.isAndroid) {
         log("android");
-        if (await _requestPermission(Permission.storage)) {
+        if (await _requestPermission(Permission.manageExternalStorage)) {
           log("has permission");
-          final List<Directory>? dir = await getExternalStorageDirectories();
-          if (dir != null) {
+          // final List<Directory>? dir = await getExternalStorageDirectories();
+          directory = await getTemporaryDirectory();
+          if (directory != null) {
             log("has directories.");
-            Directory tempDir = dir[0].parent.parent.parent.parent;
-            log(tempDir.path);
-            directory = Directory("${tempDir.path}/Documents/Sarathi");
+            // Directory tempDir = dir[0];
+            // Directory tempDir = dir[0].parent.parent.parent.parent;
+            // log(tempDir.toString());
+            // directory = Directory(tempDir.toString());
             log(directory.path);
             await directory.create(recursive: true).then((value) async {
               if (await value.exists()) {
@@ -55,6 +59,7 @@ class _FileDownloaderState extends State<FileDownloader> {
             });
           } else {
             log("has no directories.");
+            return false;
           }
         } else {
           return false;
@@ -67,7 +72,7 @@ class _FileDownloaderState extends State<FileDownloader> {
         }
       }
 
-      if (await directory!.exists() && pathToSaveFile != "") {
+      if (await directory.exists() && pathToSaveFile != "") {
         log("file path exists.");
         await dio.download(url, pathToSaveFile,
             onReceiveProgress: (received, total) {
@@ -79,7 +84,26 @@ class _FileDownloaderState extends State<FileDownloader> {
             progress = received / total;
           });
         });
+        if (!await FlutterFileDialog.isPickDirectorySupported()) {
+          print("Picking directory not supported");
+          return false;
+        }
 
+        final pickedDirectory = await FlutterFileDialog.pickDirectory();
+
+        if (pickedDirectory != null) {
+          log(lookupMimeType(pathToSaveFile).toString());
+          final filePath = await FlutterFileDialog.saveFileToDirectory(
+            directory: pickedDirectory,
+            data: File(pathToSaveFile).readAsBytesSync(),
+            fileName: fileName,
+            mimeType: lookupMimeType(pathToSaveFile),
+            replace: true,
+          );
+        } else {
+          print("Picked directory is null");
+          return false;
+        }
         // if (Platform.isIOS) {
         //   await ImageGallerySaver.saveFile(saveFile.path,
         //       isReturnPathOfIOS: true);
