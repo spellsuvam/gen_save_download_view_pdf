@@ -12,469 +12,208 @@ class PdfGenerator extends StatefulWidget {
 }
 
 class PdfGeneratorState extends State<PdfGenerator> {
-  Future<void> _admitCard1(
-      {required String examName, required String studentName}) async {
-    var htmlContent = """
-<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-</head>
-<body>
-<div class="v1_6">
-<div class="v1_7">
-</div><div class="v1_8">
-<div class="v1_9">
-</div>
-</div>
-<div class="v1_10">
-<div class="v1_11">
-<span class="v1_12">Amrit college of science and technology</span>
-<span class="v1_13">Narephat koteswor, Kathmandu</span>
-</div><div class="v1_14"><span class="v1_15">Tel : +977 580601</span><div class="v1_16">
-<span class="v1_17">/</span><span class="v1_18">+977 9808080800</span></div>
-</div></div><div class="v1_19"></div><div class="v1_20"><div class="v1_21">
-<div class="v1_22"><span class="v1_23">Name</span><span class="v1_24">: Ranjit Shrestha </span>
-</div><div class="v1_25"><span class="v1_26">: 12 - Science - Biology </span>
-<span class="v1_27">Class </span></div><div class="v1_28"><span class="v1_29">: B</span>
-<span class="v1_30">Section</span></div><div class="v1_31"><span class="v1_32">: 12356</span><span class="v1_33">Roll no.</span>
-</div></div><div class="v1_34"><div class="v1_35"></div><span class="v1_36">Admit Card</span></div></div><div class="v1_37">
-<span class="v1_38">Principle Signature</span><div class="name"></div></div></div></body></html> 
-<br/><br/> 
-<style>* {
-  box-sizing: border-box;
-}
-body {
-  font-size: 14px;
-}
-.v1_6 {
-  width: 325px;
-  height: 180px;
-  background: url("../images/v1_6.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_7 {
-  width: 325px;
-  height: 180px;
-  background: rgba(244,247,251,1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 1px solid rgba(25,38,56,1);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  overflow: hidden;
-}
-.v1_8 {
-  width: 325px;
-  height: 180px;
-  background: url("../images/v1_8.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  overflow: hidden;
-}
-.v1_9 {
-  width: 30px;
-  height: 30px;
-  background: url("../images/v1_9.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_10 {
-  width: 249px;
-  height: 29px;
-  background: url("../images/v1_10.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 11px;
-  left: 48px;
-  overflow: hidden;
-}
-.v1_11 {
-  width: 205px;
-  height: 29px;
-  background: url("../images/v1_11.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_12 {
-  width: 205px;
-  color: rgba(25,38,56,1);
-  position: relative;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 10px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_13 {
-  width: 106px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 16px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 7px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_14 {
-  width: 132px;
-  height: 13px;
-  background: url("../images/v1_14.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin: 3px;
-  opacity: 1;
-  position: absolute;
-  top: 16px;
-  left: 114px;
-  overflow: hidden;
-}
-.v1_15 {
-  width: 60px;
-  color: rgba(25,38,56,1);
-  position: relative;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 7px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_16 {
-  width: 69px;
-  height: 13px;
-  background: url("../images/v1_16.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 64px;
-  overflow: hidden;
-}
-.v1_17 {
-  width: 3px;
-  color: rgba(25,38,56,1);
-  position: relative;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 7px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_18 {
-  width: 63px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 1px;
-  left: 7px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 7px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_19 {
-  width: 70px;
-  height: 88px;
-  background: rgba(217,217,217,1);
-  opacity: 1;
-  position: absolute;
-  top: 52px;
-  left: 12px;
-  border: 1.128260850906372px solid rgba(25,38,56,1);
-  border-top-left-radius: 1px;
-  border-top-right-radius: 1px;
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-  overflow: hidden;
-}
-.v1_20 {
-  width: 151px;
-  height: 78px;
-  background: url("../images/v1_20.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 52px;
-  left: 91px;
-  overflow: hidden;
-}
-.v1_21 {
-  width: 151px;
-  height: 58px;
-  background: url("../images/v1_21.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 20px;
-  left: 1px;
-  overflow: hidden;
-}
-.v1_22 {
-  width: 122px;
-  height: 13px;
-  background: url("../images/v1_22.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_23 {
-  width: 26px;
-  color: rgba(25,38,56,1);
-  position: relative;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_24 {
-  width: 70px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 52px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_25 {
-  width: 151px;
-  height: 13px;
-  background: url("../images/v1_25.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 15px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_26 {
-  width: 99px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 52px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_27 {
-  width: 25px;
-  color: rgba(25,38,56,1);
-  position: relative;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_28 {
-  width: 63px;
-  height: 13px;
-  background: url("../images/v1_28.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_29 {
-  width: 11px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 52px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_30 {
-  width: 34px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_31 {
-  width: 84px;
-  height: 13px;
-  background: url("../images/v1_31.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 45px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_32 {
-  width: 32px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 52px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_33 {
-  width: 32px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_34 {
-  width: 60px;
-  height: 15px;
-  background: url("../images/v1_34.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v1_35 {
-  width: 60px;
-  height: 15px;
-  background: rgba(55,66,83,1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 0.752173900604248px solid rgba(244,247,251,1);
-  overflow: hidden;
-}
-.v1_36 {
-  width: 50px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 1px;
-  left: 5px;
-  font-family: Inter;
-  font-weight: Semi Bold;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.v1_37 {
-  width: 82px;
-  height: 16px;
-  background: url("../images/v1_37.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 152px;
-  left: 96px;
-  overflow: hidden;
-}
-.v1_38 {
-  width: 82px;
-  color: rgba(25,38,56,1);
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 9px;
-  opacity: 1;
-  text-align: left;
-}
-.name {
-  color: #fff;
-}
-</style>
+  Future<void> _IdCard(
+      {required String studentName,
+      required String schoolName,
+      required String schoolAddress,
+      required String schoolPhone,
+      required String studentId,
+      required String studentDob,
+      required String studentClass,
+      required String studentSection,
+      required String studentRoll,
+      required String studentPhone,
+      required String cardValidity,
+      required String studentPhoto,
+      required String schoolLogo,
+      required String barCode,
+      required String signature}) async {
+    var format1 = """
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <div
+      style="
+        width: 600px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        transform: scaleX(1);
+      "
+    >
+      <div style="display: flex; text-align: left; padding: 5px">
+        <span style="display: flex; flex-wrap: wrap; align-content: center;">
+          <img src="$schoolLogo" alt="image" style="width: 100px" />
+        </span>
+        <div style="margin-left:10px">
+          <p style="font-weight: bold; font-size: 1.25rem; margin-bottom: 1px">
+            $schoolName
+          </p>
+          <p>$schoolAddress, &nbsp;Tel:$schoolPhone</p>
+        </div>
+      </div>
+      <div
+        style="
+          height: 40px;
+          background-color: #4a5568;
+          text-align: center;
+          padding-top: 2px;
+        "
+      >
+        <span
+          style="
+            color: #fff;
+            font-weight: 600;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 1.25rem;
+          "
+        >
+          ${"student's identity card".toUpperCase()}
+        </span>
+      </div>
+      <div style="display: flex; gap: 5px; background-color: #f7fafc; margin-top:10px">
+        <span style="margin-left: 5px; margin-top: 3px">
+          <img
+            style="
+              width: 80px;
+              border-width: 1px;
+              border-style: solid;
+              border-color: #000;
+              background-color: #fff;
+            "
+            src="$studentPhoto"
+            alt="name"
+          />
+        </span>
+        <div
+          style="
+            display: flex;
+            gap: 5px;
+            align-items: flex-start;
+            padding-left: 5px;
+            padding: 5px;
+          "
+        >
+          <span className="">
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Student ID</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Name</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">DOB</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Class</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Section</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Roll</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Mobile No.</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">Validity</span>
+            </p>
+          </span>
+          <span>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">: $studentId</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">: $studentName</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">
+                : $studentDob
+              </span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">: $studentClass</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">: $studentSection</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">: $studentRoll</span>
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">
+                : $studentPhone </span
+              >
+            </p>
+            <p style="margin-top: 1.5px; margin-bottom: 1.5px">
+              <span style="font-weight: 500; color: #4b5563">
+                : $cardValidity </span
+              >
+            </p>
+          </span>
+        </div>
+      </div>
+
+      <div
+        style="
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+          display: flex;
+          flex-direction: column;
+            text-align: left;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+          "
+        >
+          <span style="padding-left: 5px; padding-right: 5px">
+            <img
+              src="$signature"
+              alt="{signature?.name}"
+              style="width: 90px; margin-left: 5px"
+            />
+          </span>
+          <span
+            style="
+              border-style: solid;
+              border-top-width: 1px;
+              border-top-color: #000;
+            "
+          >
+            Principal's Signature
+          </span>
+        </div>
+        <span >
+          <img
+            src="$barCode"
+            alt="bar"
+            style="width: 150px; height: 40px; margin-right: 5px;"
+          />
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
 """;
-    final List<Directory>? dir = await getExternalStorageDirectories();
-    if (dir != null) {
-      Directory tempDir = dir[0].parent.parent.parent.parent;
-      Directory docDir = Directory("${tempDir.path}/Documents");
-      docDir.create(); //* creates the Documents folder if it does not exist.
-      File generatedPdfFile = await FlutterHtmlToPdf.convertFromHtmlContent(
-          htmlContent, docDir.path, "Invoice");
-      OpenFile.open(generatedPdfFile.path);
-    }
+
+    final Directory docDir = await getTemporaryDirectory();
+
+    docDir.create(); //* creates the Documents folder if it does not exist.
+    File generatedPdfFile = await FlutterHtmlToPdf.convertFromHtmlContent(
+        format1, docDir.path, "Invoice");
+    OpenFile.open(generatedPdfFile.path);
   }
 
   @override
@@ -483,9 +222,28 @@ body {
         body: Center(
             child: TextButton(
                 onPressed: () {
-                  _admitCard1(
-                      examName: "First Term Exam", studentName: "Ram Adhikari");
+                  _IdCard(
+                    barCode:
+                        "https://t3.ftcdn.net/jpg/04/55/48/06/360_F_455480661_B1ndlageM3kplzg1NRPFUgYj2iWXvDQS.jpg",
+                    studentName: "Ram Adhikari",
+                    cardValidity: "2080/12/31",
+                    schoolAddress: "baneshwor",
+                    schoolLogo:
+                        "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9nb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+                    schoolName: "Sarathi english school",
+                    schoolPhone: "+977-98123456",
+                    studentClass: "1",
+                    studentDob: "2057/12/11",
+                    studentId: "163/075",
+                    studentPhone: "981234568745",
+                    studentPhoto:
+                        "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    studentRoll: "1",
+                    studentSection: "A",
+                    signature:
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Jon_Kirsch%27s_Signature.png/800px-Jon_Kirsch%27s_Signature.png?20100224042226",
+                  );
                 },
-                child: Text('Generate admit card 1'))));
+                child: Text('Generate Id card 1'))));
   }
 }
