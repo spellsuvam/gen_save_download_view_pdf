@@ -24,7 +24,6 @@ Future<void> invoice({
   required String grand_total,
 }) async {
   var format1 = """
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -113,34 +112,35 @@ Future<void> invoice({
           </thead>
 
           <tbody
-            style="background-color: #f1f5f9; border-bottom: 1px solid #e2e8f0"
+            style="background-color: #f1f5f9; border-bottom: 0px solid #e2e8f0"
           >
-            <tr>
+            <tr style="flex-direction: row;">
               <td
-                style="
+                 style="   
+                          
                   white-space: nowrap;
+                           
                   font-size: small;
-                  color: #a0aec0;
-                  border: none;
-                  background-color: #334155;
+                  border-right: 2px solid black;
+                  color: #000000;
+                  
+
+                   background-color: #f1f5f9;
                 "
               >
-                <div
-                  style="
-                    background-color: #f1f5f9;
-                    
+              <div
+                  style="  
+                  
                     padding-left: 0.75rem;
-                    padding-right: 0.75rem;
-                    padding-top: 1rem;
-                    border-right: 1px solid black;
-                    padding-bottom: 1.5rem;
-                    border-radius: 0 0 0 150px;
+                    padding-right: 0.75rem;      
+                   padding-bottom: 1.5rem;
+                   
                   "
                 >
                   <div
-                    style="display: flex; flex-direction: column; gap: 1.25rem"
+                    style="display: flex; flex-direction: column; gap: 1.25rem;"
                   >
-                    <div style="text-align: left">
+                    <div style="text-align: left;">
                       <p
                         style="
                           font-size: small;
@@ -202,15 +202,35 @@ Future<void> invoice({
                     </div>
                   </div>
                 </div>
+                <div style="
+                  position:relative;
+                  height:70px;  
+                  ">
+                  <div class="e1_4" style="background-color:#334155;
+	                width:100%;
+	                  height:70px;
+	                  position:absolute;
+	                     left:0px;
+	                     top:1px;                     
+                       "></div>
+                       <div class="e1_5" style="background-color:#f1f5f9;
+	                     width:100%;
+	                     height:70px;
+	                     position:absolute;
+                       
+	                     left: 0px;
+	                     top:0px;
+	                     border-radius:0 0 0 150px;
+  
+                       "></div>
+                       
+                     </div>
               </td>
               <td
-                style="
-                  
+                style="                
                   white-space: nowrap;
                   padding-top: 4px;
-                  padding-bottom: 4px;
-                  display: flex;
-                  flex-direction: column;
+                  padding-bottom: 4px;                
                   font-size: small;
                   color: #000000;
                   background-color: #f1f5f9;
@@ -290,7 +310,6 @@ Future<void> invoice({
     </div>
   </div>
 </div>
-
   </body>
 </html>
 """;
