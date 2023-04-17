@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_generator/invoice_format.dart';
 import 'package:pdf_generator/receipt_format.dart';
+import 'package:pdf_generator/routine.dart';
 import 'package:pdf_generator/routine_format.dart';
 
 import 'admit_card_format.dart';
@@ -74,6 +75,32 @@ class PdfGeneratorState extends State<PdfGenerator> {
         TextButton(
             onPressed: () {
               routine(
+                routine: [
+                  RoutineModel(
+                      subjectType: 1,
+                      subjectName: "Math",
+                      examDate: "2078/08/02",
+                      examDay: "Tuesday"),
+                  RoutineModel(
+                      subjectType: 1,
+                      subjectName: "Nepali",
+                      examDate: "2078/08/02",
+                      examDay: "Tuesday"),
+                  RoutineModel(
+                      subjectType: 1,
+                      subjectName: "Science",
+                      examDate: "2078/08/02",
+                      examDay: "Tuesday"),
+                  RoutineModel(
+                      subjectType: 2,
+                      subjectName: "Science",
+                      examDate: "2078/08/02",
+                      examDay: "Tuesday")
+                ],
+                examEndTime: "01:00 PM",
+                examStartTime: "10:00 AM",
+                examStartDate: "2080/03/27",
+                examName: "first term",
                 barCode:
                     "https://t3.ftcdn.net/jpg/04/55/48/06/360_F_455480661_B1ndlageM3kplzg1NRPFUgYj2iWXvDQS.jpg",
                 studentName: "Ram Adhikari",
