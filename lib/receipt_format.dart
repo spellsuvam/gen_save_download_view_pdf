@@ -80,7 +80,8 @@ Future<void> receipt({
                       style="border-radius: 50%; width: 80px; height: 80px"
                     />
                   </span>
-                  <span style="margin-top: 0.75rem">$company_name</span>
+                   <span style="margin-top: 0; font-weight: 700; font-size: 1.5rem;">$company_name</span>
+
                 </div>
               </th>
               <th

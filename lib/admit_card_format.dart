@@ -22,25 +22,23 @@ Future<void> admitCard(
   var format1 = """
 <!DOCTYPE html>
 <html>
-  <head>
-    
+  <head>    
   </head>
-  <body>
-     
-              <div style="margin-top: 1.5rem;">
-  <div style="border: 1px solid black; border-radius: 0.5rem; overflow-x: auto; background-color: #cbd5e0; width: 75%; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
+  <body> 
+  <div style="margin-top: 1.5rem;">
+  <div style="border: 1px solid black; border-radius: 0.5rem; overflow-x: auto; background-color: #F1F5F9; width: 75%; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
     <div style="display: inline-block; width: 100%; vertical-align: middle;">
       <div style="width: 100%; border-radius: 0.5rem;">
-        <div style="display: flex; justify-content: center; padding: 1.25rem;">
+        <div style="display: flex; flex-direction: row; justify-content: center; padding: 1.25rem;">
           <span>
             <img src=$schoolLogo alt="image" style="width: 100px;">
           </span>
-          <div style="">
-            <p style="font-weight: 700; font-size: 1.5rem;">
-              $schoolName
+          <div style="margin-left:10px">
+            <p style="font-weight: 700; font-size: 1.5rem; margin: 0;">
+             $schoolName
             </p>
-            <p>
-              &nbsp;&nbsp;$schoolAddress, Tel:$schoolPhone
+            <p style="margin-top: 1px;"> 
+              $schoolAddress,&nbsp; Tel:$schoolPhone
             </p>
           </div>
         </div>
@@ -78,13 +76,27 @@ Future<void> admitCard(
             </p>
           </div>
         </div>
-        <div style="text-align: right; padding: 1.25rem;">
-          <span style="padding-left: 2.5rem;">
-            <img src=$signature alt="principal signature" style="width: 90px; margin-left: auto;">
+        <div
+          style="
+          display: flex;
+          flex-direction: column;
+          
+            text-align: right;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+          "
+        >
+          <span style="padding-left: 5px; padding-right: 5px;">
+            <img
+              src="$signature"
+              alt="{signature?.name}"
+              style="width: 90px; margin-right: 5px"
+            />
           </span>
-          <span style="border-style: solid; border-top-width: 1px; border-color: black; display: inline-block; padding-left: 0.5rem; margin-left: 2rem;">
-            Principal Signature
-          </span>
+          
+            Principal's Signature
+          
         </div>
       </div>
     </div>

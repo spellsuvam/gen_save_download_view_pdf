@@ -80,7 +80,7 @@ Future<void> invoice({
                       style="border-radius: 50%; width: 80px; height: 80px"
                     />
                   </span>
-                  <span style="margin-top: 0.75rem">$company_name</span>
+                  <span style="margin-top: 0; font-weight: 700; font-size: 1.5rem;">$company_name</span>
                 </div>
               </th>
               <th
@@ -237,7 +237,16 @@ Future<void> invoice({
                 "
               >
               <div style="flex:1;display: flex; flex-direction: column; gap: 10px;">
-              ${feeDetails.map<String>((e) => '<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 3px; color: #000000; vertical-align: top;"><span style="padding-left: 1rem; padding-right: 1rem;">${e["description"]}</span><span style="padding-left: 1rem; padding-right: 1rem;">${e["total"]}</span></div>').join('')}
+              ${feeDetails.map<String>((e) => '''
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 3px; color: #000000; vertical-align: top;">
+              <span style="padding-left: 1rem; padding-right: 1rem;">
+              ${e["description"]}
+              </span>
+              <span style="padding-left: 1rem; padding-right: 1rem;">
+              ${e["total"]}
+              </span>
+              </div>
+              ''').join('')}
               <hr
                       style="  
                         width:400px;         

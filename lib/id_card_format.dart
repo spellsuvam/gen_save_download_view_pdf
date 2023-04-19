@@ -41,10 +41,10 @@ Future<void> idCard(
           <img src="$schoolLogo" alt="image" style="width: 100px" />
         </span>
         <div style="margin-left:10px">
-          <p style="font-weight: bold; font-size: 1.25rem; margin-bottom: 1px">
+          <p style="font-weight: bold; font-size: 1.5rem; margin: 0">
             $schoolName
           </p>
-          <p>$schoolAddress, &nbsp;Tel:$schoolPhone</p>
+          <p style="margin-top: 1px;">$schoolAddress, &nbsp;Tel:$schoolPhone</p>
         </div>
       </div>
       <div
@@ -173,15 +173,9 @@ Future<void> idCard(
               style="width: 90px; margin-left: 5px"
             />
           </span>
-          <span
-            style="
-              border-style: solid;
-              border-top-width: 1px;
-              border-top-color: #000;
-            "
-          >
+          
             Principal's Signature
-          </span>
+          
         </div>
         <span >
           <img

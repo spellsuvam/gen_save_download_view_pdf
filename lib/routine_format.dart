@@ -46,7 +46,7 @@ Future<void> routine(
         />
       </span>
       <div style="margin-left: 4rem; margin-right: auto; padding-left: 0; padding-right: 1.25rem; padding-top: 0.5rem; padding-bottom: 0.125rem; color: #4b5563;">
-        <p style="font-weight: 700; margin-bottom: 0.5rem; font-size: 2rem;">$schoolName</p>
+        <p style="font-weight: 700; margin-bottom: 0.5rem;margin-top: 0; font-size: 1.5rem;">$schoolName</p>
         <p style="margin-bottom: 0.5rem; text-align: center;">$schoolAddress</p>
         <p style="margin-bottom: 0.5rem; text-align: center;">Tel : $schoolPhone</p>
         <p style="font-weight: 700; margin-bottom: 0.5rem; text-align: center;">Exam Routine</p>
