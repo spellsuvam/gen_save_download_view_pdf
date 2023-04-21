@@ -60,9 +60,7 @@ class PdfGeneratorState extends State<PdfGenerator> {
                 schoolName: "Sarathi english school",
                 schoolPhone: "+977-98123456",
                 studentClass: "1",
-                studentDob: "2057/12/11",
                 studentId: "163/075",
-                studentPhone: "981234568745",
                 studentPhoto:
                     "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
                 studentRoll: "1",
